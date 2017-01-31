@@ -1,0 +1,14 @@
+--- 
+title: "MATH-541B Screening Solutions"
+book_filename: "math541B-screening-solutions"
+author: "Saket Choudhary"
+date: "`r Sys.Date()`"
+site: "bookdown::bookdown_site"
+output:
+  bookdown::gitbook: default
+  bookdown::pdf_book:
+    keep_tex: yes
+documentclass: book
+link-citations: yes
+edit: https://github.com/saketkc/usc-math-541B-screening-solutions/edit/master/%s
+---
