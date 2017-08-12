@@ -1,3 +1,12 @@
+---
+output:
+  bookdown::gitbook:
+    highlight: tango
+site: 
+  bookdown::bookdown_site
+---
+
 # MATH-541B Screening Solutions {-}
 
 Solutions to MATH-541B screening exams are provided. They are indexed by (year, semester). 
+site: bookdown::bookdown_site
