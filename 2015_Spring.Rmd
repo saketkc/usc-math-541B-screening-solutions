@@ -42,7 +42,7 @@ f_Z_i(z_i) &\propto exp(-\frac{1}{2}\big( (z_i-\theta_i)^2 + \frac{(\theta-\epsi
 $$  
 Skipped details
 
-## Part 2(b)
+### Part 2(b)
 
 Define $p = P(Z_i > u) = P( \frac{Z-\mathcal{\epsilon}}{\sqrt{\sigma^2+1}} > \frac{u-\mathcal{\epsilon_i}}{\sqrt{\sigma^2+1}}) = \phi(\frac{\mathcal{\epsilon_i}-u}{\sigma{\sigma^2+1}})$
 
