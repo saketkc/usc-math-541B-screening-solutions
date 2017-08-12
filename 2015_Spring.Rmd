@@ -1,0 +1,79 @@
+# 2016-Spring
+
+## Paper
+[MATH-541B Spring 2015](https://drive.google.com/drive/folders/0B1RIs0n1fB8SfmpSTmQzSmtaa0V5Wjl2bjd4bGRxNUo3MnZzU3YyODUxcXVYVDJBMXM1S2s)
+
+
+## Problem 1
+
+### Part 1(a)
+$$
+\begin{align*}
+P(\sqrt{n}(\widetilde{X_n}-\theta) \leq a) &= P(\sum_{i=1}^n \geq \frac{n+1}{2})\\
+&= P(\frac{\sum_iY_i - np}{\sqrt{np(1-p)}} \geq \frac{\frac{n+1}{2}-np}{\sqrt{np(1-p)}})\\
+p &= P(X_i \leq \theta + \frac{a}{\sqrt{n}})\\
+&= \frac{\pi+2 \tan^{-1}(\frac{a}{\sqrt{n}})}{2\pi}\\
+&= {\frac{1}{2} + \frac{a}{\pi\sqrt{n}}}\\
+1-p &= {\frac{1}{2} - \frac{a}{\pi\sqrt{n}}}\\
+\lim_{n \rightarrow \infty} \frac{\frac{n+1}{2}-np}{\sqrt{np(1-p)}} &=\lim_{n \rightarrow \infty}  \frac{\frac{1}{2}-\frac{a\sqrt{n}}{\pi}}{\sqrt{\frac{n}{4} - \frac{a^2}{\pi}}}\\
+&= \lim_{n \rightarrow \infty}  \frac{\frac{1}{2\sqrt{n}}-\frac{a}{\pi}}{\sqrt{\frac{1}{4} - \frac{a^2}{\pi\sqrt{n}}}}\\
+P(\sqrt{n}(\widetilde{X_n}-\theta) \leq a) &\rightarrow \frac{-2a}{\pi}
+\end{align*}
+$$
+
+### Part 1(b)
+
+$H_\theta: \theta=\theta_0$ ; $H_{\theta_1} = \theta \neq \theta_0$
+
+$| \widetilde{X_n}-\theta | \geq z_{\frac{\alpha}{2}}
+
+## Problem 2
+$Z_i | \theta_i \sim \mathcal{N}(\theta_1, 1)$
+
+$\theta_i \sim \mathcal{N}(\mathcal{\epsilon}, 1)$
+
+### Part 2(a)
+
+$$
+\begin{align*}
+f_Z_i(z_i) &\propto exp(-\frac{1}{2}\big( (z_i-\theta_i)^2 + \frac{(\theta-\epsilon)^2}{\sigma^2} \big)) \\
+& \propto exp(-\frac{1}{2(\sigma^2+1)} (z_i-\epsilon_i))
+\end{align*}
+$$  
+Skipped details
+
+## Part 2(b)
+
+Define $p = P(Z_i > u) = P( \frac{Z-\mathcal{\epsilon}}{\sqrt{\sigma^2+1}} > \frac{u-\mathcal{\epsilon_i}}{\sqrt{\sigma^2+1}}) = \phi(\frac{\mathcal{\epsilon_i}-u}{\sigma{\sigma^2+1}})$
+
+The incomplete data log likelihood:
+$$
+\begin{align*}
+L(\theta | X) &= \prod_{i=1}^n p^{x_i}(1-p)^{1-x_i}\\
+&= p^{\sum_i x_i}(1-p)^{n-\sum_i x_i}
+\end{align*}
+$$
+
+Complete data log likehood:
+
+$$
+\begin{align*}
+f(Z|\mathcal{\epsilon}, \sigma^2) &= (2\pi(\sigma^2+1))^{-\frac{n}{2}} \exp(-\sum_i\frac{(z_i-\mathcal{\epsilon})^2}{2(\sigma^2+1)})\\
+\log L(\mathcal{\epsilon} | Z,\sigma^2) & = -\frac{n}{2} \log(2\pi(\sigma^2+1)) -\sum_i\frac{(z_i-\mathcal{\epsilon})^2}{2(\sigma^2+1)}\\
+E[\log L(\mathcal{\epsilon} | Z,\sigma^2) ] &= -\frac{n}{2} \log(2\pi(\sigma^2+1)) -\frac{1}{2(\sigma^2+1)} E[\sum_i z_i^2 -2\mathcal{\epsilon}\sum_i z_i + n\mathcal{\epsilon^2}]
+\end{align*}
+$$
+
+where the expectation is with repsect top the conidiotnal distribution of $Z$ having observed $X$, $k(z|x,\theta) = h(x,z|\theta)/g(x | \theta)$
+
+
+$$
+\begin{align*}
+Q(\mathcal{\epsilon}| \mathcal{\epsilon_0}, \sigma^2, X) &= -\frac{n}{2} \log(2\pi(\sigma^2+1)) -\frac{1}{2(\sigma^2+1)} E[\sum_i z_i^2 -2\mathcal{\epsilon}\sum_i z_i + n\mathcal{\epsilon^2}]\\
+\frac{\partial Q}{\partial \mathcal{\epsilon}} &= -\frac{1}{2(\sigma^2+1)} \big( -2 \sum_iE[ z_i | x_i] + 2n\mathcal{\epsilon} \big) = 0\\
+\implies \mathcal{\epsilon^{(i)}} = \frac{1}{n} E[z_i|x_i,\mathcal{\epsilon^{i-1},\sigma^2}]
+\end{align*}
+$$
+
+
+
